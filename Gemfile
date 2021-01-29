@@ -16,16 +16,19 @@ gem 'rack-cors', '~> 1.1.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
+  #  tests for Rspec
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'shoulda-matchers', '~> 4.0'
 end
+
+
 group :development do
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  #Libryries tests with Rspec
-  gem 'rspec-rails', '~> 4.0.1'
-  gem 'factory_bot_rails'
-  gem 'shoulda-matchers', '~> 4.0'
-  gem 'faker' 
 
 
 end
