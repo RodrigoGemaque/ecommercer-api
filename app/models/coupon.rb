@@ -6,5 +6,5 @@ class Coupon < ApplicationRecord
 
   validates :due_date, presence: true, future_date: true
   validates :status, presence: true
-  enum status: { active:1,  inactive: 2 }
+  enum status: { active:1,  inactive: 2 } 
 end
