@@ -5,8 +5,7 @@ FactoryBot.define do
     price { Faker::Commerce.price(range: 100.0..400)}
     # OCASIONAVA ERRO ṔOR NÃO TER UM PRODUTO JÁ CRIADO
     # productable { nil }
-    
-    
+    image { Rack::Test::UploadedFile.new(Rails.root.join("spec/support/images/product_image.png")) }
     after :build do |product|
       product.productable = create(:game)
     end
