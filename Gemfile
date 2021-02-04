@@ -3,16 +3,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
-#Basic
+# Basic
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 
-#Auth
+# Auth
 gem 'devise_token_auth', '~> 1.1.4'
 
-#Cors
+# Cors
 gem 'rack-cors', '~> 1.1.1'
+
+# Rendering
+gem 'jbuilder', '~> 2.10.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
