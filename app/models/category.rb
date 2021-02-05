@@ -7,4 +7,5 @@ class Category < ApplicationRecord
 
   #incluindo o concern nameSearchable
   include NameSearchable
+  include Paginatable
 end
