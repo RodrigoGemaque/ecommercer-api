@@ -31,4 +31,7 @@ RSpec.describe Coupon, type: :model do
     expect(subject.errors.keys).to_not include :due_date
   end
 
+    #pegango o paginatable concern de shared_examples
+    it_behaves_like "paginatable concern", :coupon
+  
 end

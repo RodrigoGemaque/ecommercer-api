@@ -7,5 +7,9 @@ class User < ActiveRecord::Base
   validates :profile, presence: true
 
   enum profile: {admin: 0, client: 1}
-  
+
+  # incluindo os concerns
+  include NameSearchable
+  include Paginatable
+
 end
