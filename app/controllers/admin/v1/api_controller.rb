@@ -4,16 +4,12 @@ module Admin::V1
 
 
     include Authenticable
+    include SimpleErrorRenderable#concern de erros
+    self.simple_error_partial = "shared/simple_error"
     #sempre que qualquer endpoint que herda de apicontroller chama o restrict access
     before_action :restrict_access_for_admin!
 
-
-    def render_error(message: nil, fields: nil, status: :unprocessable_entity)
-      errors = {}
-      errors['fields'] = fields if fields.present? #so executa se o fields.present for verdadeiro
-      errors['message'] = message if message.present? #so executa se o fields.present for verdadeiro
-      render json: {errors: errors}, status: status
-    end
+    
 
   #caso a classe ForbiddenAccess for chamada 
   rescue_from ForbiddenAccess do
