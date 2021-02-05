@@ -7,6 +7,9 @@ RSpec.describe Category, type: :model do
   it { is_expected.to have_many(:products).through(:product_categories ) }
 
 
-  #pegango o shared_exemple
-   it_behaves_like "name searchable concern", :category
+  #pegango o searchable concern de shared_examples
+  it_behaves_like "name searchable concern", :category
+  #pegango o paginatable concern de shared_examples
+  it_behaves_like "paginatable concern", :category
+
 end
