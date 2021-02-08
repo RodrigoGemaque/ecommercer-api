@@ -14,8 +14,17 @@ RSpec.describe "Admin::V1::Categories as :client", type: :request do
 
     # inserindo o forbidden access no test
     include_examples "forbidden access" # é como se tivesse inserindo os 2 testes do arquivo forbidden access
+  end
 
+  context  "GET /categories/:id" do
+    let(:category) { create(:category) }     
+    let(:url) {"/admin/v1/categories/#{category.id}"}
+    #chamada para o endpoint
+    #fazendo isso antes de qualquer coisa
+    before(:each) { get url, headers: auth_header(user) }
 
+    # inserindo o forbidden access no test
+    include_examples "forbidden access" # é como se tivesse inserindo os 2 testes do arquivo forbidden access
   end
 
   context  "POST /categories" do

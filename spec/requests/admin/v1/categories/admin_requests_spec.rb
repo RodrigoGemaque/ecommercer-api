@@ -143,6 +143,22 @@ RSpec.describe "Admin::V1::Categories as :admin", type: :request do
 
   end
 
+  context "GET /categories/:id" do
+    let(:category) { create(:category) }
+    let(:url) { "/admin/v1/categories/#{category.id}" }
+    
+    it "returns requiested Category" do
+      get url, headers: auth_header(user)
+      expected_category = category.as_json(only: %i(id name))
+      expect(body_json['category']).to eq expected_category
+    end
+
+    it "returns success status" do
+      get url, headers: auth_header(user)
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   context "PATCH /categories/:id" do
     let(:category) { create(:category) }
     let(:url) { "/admin/v1/categories/#{category.id}" }

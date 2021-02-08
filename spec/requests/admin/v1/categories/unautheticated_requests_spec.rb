@@ -13,8 +13,17 @@ RSpec.describe "Admin::V1::Categories without authentication", type: :request do
 
     # inserindo o unauthenticated access no test
     include_examples "unauthenticated access" # é como se tivesse inserindo os 2 testes do arquivo unauthenticated access
+  end
 
+  context  "GET /categories/:id" do
+    let(:category) { create(:category) }     
+    let(:url) {"/admin/v1/categories/#{category.id}"}
+    #chamada para o endpoint
+    #fazendo isso antes de qualquer coisa
+    before(:each) { get url }
 
+    # inserindo o forbidden access no test
+    include_examples "unauthenticated access"# é como se tivesse inserindo os 2 testes do arquivo forbidden access
   end
 
   context  "POST /categories" do
