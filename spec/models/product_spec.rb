@@ -23,7 +23,8 @@ RSpec.describe Product, type: :model do
   
 
   #pegango o searchable concern de shared_examples
-  it_behaves_like "name searchable concern", :product
+  
+  it_behavior_of "like searchable concern", :product, :name
   #pegango o paginatable concern de shared_examples
   it_behaves_like "paginatable concern", :product 
   
