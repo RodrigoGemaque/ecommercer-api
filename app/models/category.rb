@@ -6,6 +6,6 @@ class Category < ApplicationRecord
   has_many :products, through: :product_categories
 
   #incluindo o concern nameSearchable
-  include NameSearchable
+  include LikeSearchable
   include Paginatable
 end

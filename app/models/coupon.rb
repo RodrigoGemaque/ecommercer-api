@@ -1,5 +1,6 @@
 class Coupon < ApplicationRecord
 
+  validates :name, presence: true
   validates :code, presence: true, uniqueness: { case_sensitive: false }
   validates :discount_value, presence: true, numericality: { greater_than: 0 }
 
@@ -10,5 +11,6 @@ class Coupon < ApplicationRecord
 
   #incluindo o concern paginatable
   include Paginatable
+  include LikeSearchable
 
 end

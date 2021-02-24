@@ -15,7 +15,7 @@ class Product < ApplicationRecord
 
   enum status: {avaliable: 1, unavaliable: 2 }
   #incluindo os concerns 
-  include NameSearchable
+  include LikeSearchable
   include Paginatable
 
 end
