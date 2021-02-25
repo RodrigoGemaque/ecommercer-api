@@ -7,3 +7,4 @@ FactoryBot.define do
     system_requirement 
   end
 end
+

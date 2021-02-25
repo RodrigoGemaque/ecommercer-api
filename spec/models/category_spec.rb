@@ -8,7 +8,7 @@ RSpec.describe Category, type: :model do
 
 
   #pegango o searchable concern de shared_examples
-  it_behaves_like "name searchable concern", :category
+  it_behavior_of "like searchable concern", :category, :name
   #pegango o paginatable concern de shared_examples
   it_behaves_like "paginatable concern", :category
 
