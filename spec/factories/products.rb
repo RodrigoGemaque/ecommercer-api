@@ -6,7 +6,7 @@ FactoryBot.define do
     # OCASIONAVA ERRO ṔOR NÃO TER UM PRODUTO JÁ CRIADO
     # productable { nil }
     image { Rack::Test::UploadedFile.new(Rails.root.join("spec/support/images/product_image.png")) }
-    status { :avaliable}
+    status { :available}
    
     after :build do |product|
       product.productable = create(:game)

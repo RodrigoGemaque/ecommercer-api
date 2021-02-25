@@ -13,7 +13,8 @@ class Product < ApplicationRecord
   validates :image, presence: true
   validates :status, presence: true
 
-  enum status: {avaliable: 1, unavaliable: 2 }
+
+ enum status: { available: 1, unavailable: 2 }
   #incluindo os concerns 
   include LikeSearchable
   include Paginatable
