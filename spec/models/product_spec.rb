@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Product, type: :model do
   subject { build(:product) } 
   
-  before { puts "#{subject.price} and #{subject.productable}"}
+  # before { puts "#{subject.price} and #{subject.productable.id}"}
   it { is_expected.to validate_uniqueness_of(:name).case_insensitive}
   it { is_expected.to validate_presence_of(:name) }
 

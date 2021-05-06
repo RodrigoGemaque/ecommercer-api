@@ -1,7 +1,7 @@
 module RequestAPI
     
 	def body_json (symbolize_keys: false) 			
-		json = 	JSON.parse(response.body) #esse response.body vem da chamada do rspec	
+		json = JSON.parse(response.body) #esse response.body vem da chamada do rspec	
 		#caso o symbolize venha como true
 		symbolize_keys ? json.deep_symbolize_keys : json # transfoma a string que vier como simbolo
 	rescue
