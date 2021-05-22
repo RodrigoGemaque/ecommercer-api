@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.text :description
       t.decimal :price, precision: 10, scale: 2
       t.references :productable, polymorphic: true, null: false
-
+      
       t.timestamps
     end
   end

@@ -14,4 +14,8 @@ class SystemRequirement < ApplicationRecord
   # validates :memory, presence: true
   # validates :video_board, presence: true
 
+  # incluindo os concerns
+  include LikeSearchable
+  include Paginatable
+
 end

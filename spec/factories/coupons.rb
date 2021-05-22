@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :coupon do
+    sequence(:name) { |n| "My Coupon #{n}" }
     code { Faker::Commerce.unique.promotion_code(digits: 4) }
     status { :active }
     # status { %i( active inactive) }
