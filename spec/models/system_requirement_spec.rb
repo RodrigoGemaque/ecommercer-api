@@ -13,9 +13,11 @@ RSpec.describe SystemRequirement, type: :model do
   
   it { is_expected.to have_many(:games).dependent(:restrict_with_error)}
 
+
   #pegango o searchable concern de shared_examples
   it_behavior_of "like searchable concern", :system_requirement, :name
   #pegango o paginatable concern de shared_examples
   it_behaves_like "paginatable concern", :system_requirement
   
+
 end

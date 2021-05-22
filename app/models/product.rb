@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
 
   has_one_attached :image   
+  # has_many_attached :image
   validates :image, presence: true
   validates :status, presence: true
 

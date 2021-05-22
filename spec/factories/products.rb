@@ -3,12 +3,15 @@ FactoryBot.define do
     sequence(:name){ |n|"Basic#{n}" }
     description { Faker::Lorem.paragraph }
     price { Faker::Commerce.price(range: 100.0..400)}
+    image { Rack::Test::UploadedFile.new(Rails.root.join("spec/support/images/product_image.png")) }
+
+
     # OCASIONAVA ERRO ṔOR NÃO TER UM PRODUTO JÁ CRIADO
     # productable { nil }
+
     image { Rack::Test::UploadedFile.new(Rails.root.join("spec/support/images/product_image.png")) }
     status { :available}
     featured { true }
-   
     after :build do |product|
       product.productable = create(:game)
     end
